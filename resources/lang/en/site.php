@@ -15,6 +15,7 @@ return [
     'action' => 'Action',
     'email' => 'E-Mail',
     'image' => 'Image',
+    'name' => 'Name',
 
     'password' => 'Password',
     'password_confirm' => 'Password Confirm',

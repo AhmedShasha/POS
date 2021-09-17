@@ -12,13 +12,14 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::all();
+        $categories = Category::paginate(5);
         return view('dashboard.categories.index' , compact('categories'));
     }
 
     public function create()
     {
         //
+        return view('dashboard.categories.create');
     }
 
     public function store(Request $request)

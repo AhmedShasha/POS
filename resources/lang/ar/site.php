@@ -17,6 +17,7 @@ return [
     'password_confirm' => 'تأكيد كلمة السر',
     'current_password' => 'كلمة السر الحاليه',
     'image' => 'الصورة',
+    'name' => 'الاسم',
 
     'no_data_found' => 'للأسف لا يوجد أي سجلات',
 

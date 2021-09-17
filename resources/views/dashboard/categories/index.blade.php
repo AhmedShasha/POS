@@ -128,7 +128,7 @@
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         <i class="fa fa-search mr-1"></i>@lang('site.search')</button>
 
-                                    @if (auth()->category()->hasPermission('categories_create'))
+                                    @if (auth()->user()->hasPermission('categories_create'))
                                         <a href="{{ route('dashboard.categories.create') }}"
                                             class="btn btn-sm btn-success">
                                             <i class="fa fa-plus mr-1"></i>@lang('site.add')</a>
