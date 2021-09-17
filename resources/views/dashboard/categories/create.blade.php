@@ -3,8 +3,8 @@
 @section('content')
     <!-- Content Wrapper. Contains page content -->
 
+    <!-- Content Header (Page header) -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
@@ -33,20 +33,20 @@
 
                 @include('partials._errors')
 
-                <form action="{{ route('dashboard.categories.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('dashboard.categories.store') }}" method="POST">
                     @csrf
                     {{ csrf_field() }}
                     {{ method_field('post') }}
 
+                    <!--    Name   -->
                     <div class="form-group">
-                        <!--    Name   -->
                         <label>@lang('site.name')</label>
                         <input type="text" name="name" class="form-control" value="{{ old('name') }}"
-                            placeholder="@lang('site.name')">
+                            placeholder="@lang('site.name')" required>
                     </div>
 
+                    <!--   Button Add     -->
                     <div class="form-group">
-                        <!--   Button Add     -->
                         <button type="submit" class="btn btn-primary "><i
                                 class="fa fa-plus mr-1"></i>@lang('site.add')</button>
                         {{-- <button type="submit" class="btn btn-danger " onclick="{{ route('dashboard.categories.index') }}"><i

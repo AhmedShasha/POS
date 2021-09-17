@@ -38,6 +38,7 @@ return [
     'delete' => 'حذف',
 
     'categories' => 'الاقسام',
+    'category' => 'القسم',
     'products' => 'المنتجات',
 
 ];

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Lang;
 
 class CategoryController extends Controller
 {
@@ -25,6 +26,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name'  =>  'required|unique:categories,name'
+        ]);
+
+        Category::created($request->all());
+        toast()->success(Lang::get('site.added_successfully'));
+        return redirect()->route('dashboard.categories.index');
+
     }
 
     public function show(Category $category)

@@ -42,21 +42,21 @@
                         <!--    First name   -->
                         <label>@lang('site.first_name')</label>
                         <input type="text" name="first_name" class="form-control" value="{{ old('first_name') }}"
-                            placeholder="@lang('site.first_name')">
+                            placeholder="@lang('site.first_name')" required>
                     </div>
 
                     <div class="form-group">
                         <!--    Last name   -->
                         <label>@lang('site.last_name')</label>
                         <input type="text" name="last_name" class="form-control" value="{{ old('last_name') }}"
-                            placeholder="@lang('site.last_name')">
+                            placeholder="@lang('site.last_name')" required>
                     </div>
 
                     <div class="form-group">
                         <!--    Email      -->
                         <label>@lang('site.email')</label>
                         <input type="email" name="email" class="form-control" value="{{ old('email') }}"
-                            placeholder="@lang('site.email')">
+                            placeholder="@lang('site.email')" required>
                     </div>
 
                     <div class="form-group">
@@ -73,14 +73,14 @@
                     <div class="form-group">
                         <!--    Password   -->
                         <label>@lang('site.password')</label>
-                        <input type="password" name="password" class="form-control" placeholder="@lang('site.password')">
+                        <input type="password" name="password" class="form-control" placeholder="@lang('site.password')" required>
                     </div>
 
                     <div class="form-group">
                         <!--    Password Confirmation   -->
                         <label>@lang('site.password_confirm')</label>
                         <input type="password" name="password_confirmation" class="form-control"
-                            placeholder="@lang('site.password_confirm')">
+                            placeholder="@lang('site.password_confirm')" required>
                     </div>
 
                     <div class="form-group">

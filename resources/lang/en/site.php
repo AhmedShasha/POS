@@ -41,6 +41,7 @@ return [
     'delete' => 'Delete',
 
     'categories' => 'Categories',
+    'category' => 'Category',
     'products' => 'Products',
 
 ];
