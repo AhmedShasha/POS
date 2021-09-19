@@ -45,7 +45,7 @@
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         <i class="fa fa-search mr-1"></i>@lang('site.search')</button>
 
-                                    @if (auth()->category()->hasPermission('categories_create'))
+                                    @if (auth()->user()->hasPermission('categories_create'))
                                         <a href="{{ route('dashboard.categories.create') }}"
                                             class="btn btn-sm btn-success">
                                             <i class="fa fa-plus mr-1"></i>@lang('site.add')</a>
@@ -77,7 +77,7 @@
                                         <td>{{ $category->name }}</td>
 
                                         <td>
-                                            @if (auth()->category()->hasPermission('categories_update'))
+                                            @if (auth()->user()->hasPermission('categories_update'))
                                                 <a class="btn btn-info btn-sm"
                                                     href="{{ route('dashboard.categories.edit', $category->id) }}"><i
                                                         class="fa fa-edit mr-1"></i>@lang('site.edit')</a>
@@ -86,7 +86,7 @@
                                                         class="fa fa-edit mr-1"></i>@lang('site.edit')</button>
                                             @endif
 
-                                            @if (auth()->category()->hasPermission('categories_delete'))
+                                            @if (auth()->user()->hasPermission('categories_delete'))
                                                 <form action="{{ route('dashboard.categories.destroy', $category->id) }}"
                                                     method="POST" style="display:inline-block;">
                                                     {{ csrf_field() }}

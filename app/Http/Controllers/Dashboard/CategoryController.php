@@ -10,11 +10,19 @@ use Illuminate\Support\Facades\Lang;
 class CategoryController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
         //
-        $categories = Category::paginate(5);
-        return view('dashboard.categories.index' , compact('categories'));
+        $categories = Category::where(function ($q) use ($request) {
+
+            return $q->when($request->search, function ($q) use ($request){
+
+                return $q->where('name', 'like', '%' . $request->search . '%');
+
+            });
+        })->latest()->paginate(5);
+
+        return view('dashboard.categories.index', compact('categories'));
     }
 
     public function create()
@@ -27,10 +35,10 @@ class CategoryController extends Controller
     {
         //
         $request->validate([
-            'name'  =>  'required|unique:categories,name'
+            'name' => 'required|unique:categories,name',
         ]);
 
-        Category::created($request->all());
+        Category::create($request->all());
         toast()->success(Lang::get('site.added_successfully'));
         return redirect()->route('dashboard.categories.index');
 
@@ -41,18 +49,32 @@ class CategoryController extends Controller
         //
     }
 
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+
+        $categories = Category::find($id);
+        return view('dashboard.categories.edit', compact('categories'));
     }
 
     public function update(Request $request, Category $category)
     {
         //
+        $request->validate([
+            'name' => 'required|unique:categories,name,' . $category->id,
+        ]);
+
+        $category->update($request->all());
+        toast()->success(Lang::get('site.updated_successfully'));
+        return redirect()->route('dashboard.categories.index');
     }
 
     public function destroy(Category $category)
     {
-        //
+
+        // $category = Category::find($id);
+        $category->delete();
+        toast()->success(Lang::get('site.deleted_successfully'));
+
+        return redirect()->route('dashboard.categories.index');
     }
 }
