@@ -38,19 +38,22 @@
                     {{ csrf_field() }}
                     {{ method_field('post') }}
 
-                    <!--    Name   -->
-                    <div class="form-group">
-                        <label>@lang('site.name')</label>
-                        <input type="text" name="name" class="form-control" value="{{ old('name') }}"
-                            placeholder="@lang('site.name')" required>
-                    </div>
+
+                    @foreach (config('translatable.locales') as $locale)
+                        <!--    Name   -->
+                        <div class="form-group">
+                            <label>@lang('site.'. $locale .'.name')</label>
+                            <input type="text" name="{{ $locale }}[name]" class="form-control"
+                                value="{{ old($locale . '.name') }}" placeholder="@lang('site.name')">
+                        </div>
+                    @endforeach
 
                     <!--   Button Add     -->
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "><i
                                 class="fa fa-plus mr-1"></i>@lang('site.add')</button>
-                        {{-- <button type="submit" class="btn btn-danger " onclick="{{ route('dashboard.categories.index') }}"><i
-                                class="fa fa-category-edit mr-1"></i>@lang('site.cancel')</button> --}}
+                        <a class="btn btn-danger" href="{{ route('dashboard.categories.index') }}"><i
+                                class="fa fa-category-edit mr-1"></i>@lang('site.cancel')</a>
                     </div>
 
                 </form>

@@ -111,8 +111,8 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "><i
                                 class="fa fa-user-edit mr-1"></i>@lang('site.edit')</button>
-                        {{-- <button type="submit" class="btn btn-danger" onclick="{{ route('dashboard.users.index') }}"><i
-                                class="fa fa-user-edit mr-1"></i>@lang('site.cancel')</button> --}}
+                        <a class="btn btn-danger" href="{{ route('dashboard.users.index') }}"><i
+                                class="fa fa-category-edit mr-1"></i>@lang('site.cancel')</a>
                     </div>
                 </form>
             </div>

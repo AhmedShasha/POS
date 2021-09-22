@@ -44,4 +44,14 @@ return [
     'category' => 'Category',
     'products' => 'Products',
 
+
+    'ar' =>[
+        'name'=>'Name in Arabic'
+    ],
+
+    'en' =>[
+        'name'=>'Name in English'
+    ],
+
+
 ];

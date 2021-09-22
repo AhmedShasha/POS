@@ -73,7 +73,8 @@
                     <div class="form-group">
                         <!--    Password   -->
                         <label>@lang('site.password')</label>
-                        <input type="password" name="password" class="form-control" placeholder="@lang('site.password')" required>
+                        <input type="password" name="password" class="form-control" placeholder="@lang('site.password')"
+                            required>
                     </div>
 
                     <div class="form-group">
@@ -109,8 +110,8 @@
                                         <div class="tab-pane {{ $index == 0 ? 'active' : '' }}"
                                             id="{{ $tap }}">
                                             @foreach ($cruds as $crud)
-                                                <label class="mr-2" style="font-weight: 400;"><input
-                                                        class="mr-1" type="checkbox" name="permissions[]"
+                                                <label class="mr-2 " style="font-weight: 400;"><input
+                                                        class="mr-1 " type="checkbox" name="permissions[]"
                                                         value="{{ $tap . '_' . $crud }}">@lang('site.'. $crud)</label>
                                             @endforeach
                                         </div>
@@ -126,8 +127,8 @@
                         <!--   Button Add     -->
                         <button type="submit" class="btn btn-primary "><i
                                 class="fa fa-plus mr-1"></i>@lang('site.add')</button>
-                        {{-- <button type="submit" class="btn btn-danger " onclick="{{ route('dashboard.users.index') }}"><i
-                                class="fa fa-user-edit mr-1"></i>@lang('site.cancel')</button> --}}
+                        <a class="btn btn-danger" href="{{ route('dashboard.users.index') }}"><i
+                                class="fa fa-category-edit mr-1"></i>@lang('site.cancel')</a>
                     </div>
 
                 </form>
