@@ -40,6 +40,7 @@ return [
     'categories' => 'الاقسام',
     'category' => 'القسم',
     'products' => 'المنتجات',
+    'product' => 'المنتج',
 
     'ar' =>[
         'name'=>'الاسم باللغة العربية'

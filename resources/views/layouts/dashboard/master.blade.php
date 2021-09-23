@@ -178,6 +178,23 @@
                         <span>@lang('site.Dashboard')</span>
                     </a>
                 </li>
+                @if (auth()->user()->hasPermission('categories_read'))
+                    <li class="nav-item">
+                        <a href="{{ route('dashboard.categories.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-layer-group"></i>
+                            <span>@lang('site.categories')</span>
+                        </a>
+                    </li>
+                @endif
+                @if (auth()->user()->hasPermission('products_read'))
+                    <li class="nav-item">
+                        <a href="{{ route('dashboard.products.index') }}" class="nav-link">
+                            <i class="nav-icon fab fa-product-hunt"></i>
+                            <span>@lang('site.products')</span>
+                        </a>
+                    </li>
+                @endif
+
                 @if (auth()->user()->hasPermission('users_read'))
                     <li class="nav-item">
                         <a href="{{ route('dashboard.users.index') }}" class="nav-link">
@@ -186,13 +203,6 @@
                         </a>
                     </li>
                 @endif
-
-                <li class="nav-item">
-                    <a href="{{ route('dashboard.categories.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-layer-group"></i>
-                        <span>@lang('site.categories')</span>
-                    </a>
-                </li>
 
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();

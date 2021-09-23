@@ -16,8 +16,9 @@ Route::group(
                 return view('dashboard.index');
             })->name('index');
 
-            Route::resource('users', UserController::class)->except(['show']);
             Route::resource('categories', CategoryController::class)->except(['show']);
+            Route::resource('products', ProductController::class)->except(['show']);
+            Route::resource('users', UserController::class)->except(['show']);
 
         });
     });

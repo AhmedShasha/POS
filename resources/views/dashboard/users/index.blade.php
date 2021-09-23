@@ -121,7 +121,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title m-1">@lang('site.users') <small
-                                class="ml-2">{{ $users->total() }}</small></h3>
+                                class="ml-2">{{ $users->count() }}</small></h3>
                         <!-- Form search  -->
                         <form action="{{ route('dashboard.users.index') }}" method="GET">
                             <div class="row">

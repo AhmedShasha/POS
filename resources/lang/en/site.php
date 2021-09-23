@@ -43,6 +43,7 @@ return [
     'categories' => 'Categories',
     'category' => 'Category',
     'products' => 'Products',
+    'product' => 'Product',
 
 
     'ar' =>[
