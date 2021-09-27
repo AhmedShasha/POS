@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as File;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
 
@@ -141,10 +142,8 @@ class UserController extends Controller
         $user = User::find($id);
 
         if ($user->image != 'default.png') {
-
             // Storage::disk('public_uploads')->delete('/user_images/' . $user->image);
             File::delete('uploads/users_images/' . $user->image);
-
         }
 
         $user->delete();

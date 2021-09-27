@@ -39,15 +39,16 @@
                     {{ method_field('post') }}
 
 
-                    @foreach (config('translatable.locales') as $locale)
-                        <!--    Name   -->
-                        <div class="form-group">
-                            <label>@lang('site.'. $locale .'.name')</label>
-                            <input type="text" name="{{ $locale }}[name]" class="form-control"
-                                value="{{ old($locale . '.name') }}" placeholder="@lang('site.name')">
-                        </div>
-                    @endforeach
-
+                    <div class="row">
+                        @foreach (config('translatable.locales') as $locale)
+                            <!--    Name   -->
+                            <div class="form-group col-md-6">
+                                <label>@lang('site.'. $locale .'.name')</label>
+                                <input type="text" name="{{ $locale }}[name]" class="form-control"
+                                    value="{{ old($locale . '.name') }}" placeholder="@lang('site.' .$locale. '.name')">
+                            </div>
+                        @endforeach
+                    </div>
                     <!--   Button Add     -->
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "><i
@@ -55,7 +56,6 @@
                         <a class="btn btn-danger" href="{{ route('dashboard.categories.index') }}"><i
                                 class="fa fa-category-edit mr-1"></i>@lang('site.cancel')</a>
                     </div>
-
                 </form>
             </div>
             <!-- /.card-body -->

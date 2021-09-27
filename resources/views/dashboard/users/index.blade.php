@@ -80,7 +80,7 @@
                                         <td>{{ $user->last_name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td style="width: 75px;"><img src="{{ $user->image_path }}" style="width: 50px"
-                                                class="img-circle" alt=""></td>
+                                                class="img-square img-thumbnail" alt=""></td>
                                         <td>
                                             @if (auth()->user()->hasPermission('users_update'))
                                                 <a class="btn btn-info btn-sm"

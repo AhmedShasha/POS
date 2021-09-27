@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title m-1">@lang('site.products') <small
-                                class="ml-2">{{ $products->count() }}</small></h3>
+                                class="ml-2">{{ $products->total() }}</small></h3>
 
                         <!-- Form search  -->
                         <form action="{{ route('dashboard.products.index') }}" method="GET">
@@ -80,8 +80,9 @@
                                         <td>{{ $index + 1 }}</td>
                                         <td>{{ $product->name }}</td>
                                         <td>{!! $product->description !!}</td>
-                                        <td style="width: 75px;"><img src="{{ $product->image_path }}" style="width: 50px"
-                                                class="img-square" alt=""></td>
+                                        <td style="width: 75px;"><img src="{{ $product->image_path }}"
+                                                class="img-thumbnail img-square" style="width: 50px">
+                                        </td>
                                         <td>{{ $product->purchase_price }}</td>
                                         <td>{{ $product->sale_price }}</td>
                                         <td>{{ $product->stock }}</td>
@@ -116,7 +117,7 @@
                             </tbody>
                         </table>
                         <div style="width: fit-content;margin: auto;margin-top: 15px;">
-                            {{-- {{ $products->appends(request()->query())->links() }} --}}
+                            {{ $products->appends(request()->query())->links() }}
                         </div>
                     </div>
                     <!-- /.card-body -->

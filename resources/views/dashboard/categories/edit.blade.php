@@ -43,18 +43,20 @@
                     @method('put')
                     @csrf
 
-                    @foreach (config('translatable.locales') as $locale)
-                    <!--    Name   -->
-                    <div class="form-group">
-                        <label>@lang('site.'. $locale .'.name')</label>
-                        <input type="text" name="{{ $locale }}[name]" class="form-control"
-                            value="{{ $categories->translate($locale)->name }}" placeholder="@lang('site.name')" required>
+                    <div class="row">
+                        @foreach (config('translatable.locales') as $locale)
+                            <!--    Name   -->
+                            <div class="form-group col-md-6">
+                                <label>@lang('site.'. $locale .'.name')</label>
+                                <input type="text" name="{{ $locale }}[name]" class="form-control"
+                                    value="{{ $categories->translate($locale)->name }}" placeholder="@lang('site.name')"
+                                    required>
+                            </div>
+                        @endforeach
                     </div>
-                @endforeach
-
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "><i
-                            class="fa fa-edit mr-1"></i>@lang('site.edit')</button>
+                                class="fa fa-edit mr-1"></i>@lang('site.edit')</button>
                         <a class="btn btn-danger" href="{{ route('dashboard.categories.index') }}"><i
                                 class="fa fa-category-edit mr-1"></i>@lang('site.cancel')</a>
                     </div>

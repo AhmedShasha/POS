@@ -54,57 +54,54 @@
 
                                 <div class="form-group col-md-6">
                                     <label>@lang('site.'. $locale .'.description')</label>
-                                    <textarea name="{{ $locale }}[description]" class="form-control ckeditor"
-                                        value="{{ old($locale . '.description') }}"
-                                        placeholder="@lang('site.description')">
-                                            </textarea>
+                                    <textarea name="{{ $locale }}[description]" class="form-control ckeditor "
+                                        placeholder="@lang('site.description')">{{ old($locale . '.description') }}</textarea>
                                 </div>
                             @endforeach
                         </div>
 
                         <div class="row">
                             <!--    categories      -->
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label>@lang('site.category')</label>
                                 <select name="category_id" class="form-control">
                                     <option value="">@lang('site.allcategories')</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}" {{old('category_id') == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
+                                        <option value="{{ $category->id }}"
+                                            {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                            {{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <!--    Price      -->
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label>@lang('site.purchase_price')</label>
-                                <input type="number" name="purchase_price" class="form-control">
+                                <input type="number" name="purchase_price" class="form-control" placeholder="@lang('site.purchase_price')">
                             </div>
 
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label>@lang('site.sale_price')</label>
-                                <input type="number" name="sale_price" class="form-control">
+                                <input type="number" name="sale_price" class="form-control" placeholder="@lang('site.sale_price')">
                             </div>
 
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label>@lang('site.stock')</label>
-                                <input type="number" name="stock" class="form-control">
+                                <input type="number" name="stock" class="form-control" placeholder="@lang('site.stock')">
                             </div>
+                            <!--    Image      -->
+
+                            <div class="form-group col-md-2">
+                                <label>@lang('site.image')</label>
+                                <input type="file" name="image" class="form-control image btn btn-small">
+                            </div>
+
+                            <div class="form-group col-md-2">
+                                <img style="width: 75px" class="img-thumbnail image-preview"
+                                    src="{{ asset('uploads/products_images/Productdefault.png') }}">
+                            </div>
+
                         </div>
-
-                        <!--    Image      -->
-
-                        <div class="form-group">
-                            <label>@lang('site.image')</label>
-                            <input type="file" name="image" class="form-control image btn btn-small">
-                        </div>
-
-                        <div class="form-group">
-                            <img style="width: 100px" class="img-thumbnail image-preview"
-                                src="{{ asset('uploads/products_images/Productdefault.png') }}">
-                        </div>
-
-
-
                     </div>
 
                     <!--   Button Add     -->

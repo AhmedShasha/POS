@@ -17,8 +17,16 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         //
-        $products = Product::all();
-        return view("dashboard.products.index", compact('products'));
+        $products = Product::where(function ($q) use ($request) {
+
+            return $q->when($request->search, function ($q) use ($request) {
+
+                return $q->where('name', 'like', '%' . $request->search . '%');
+
+            });
+        })->latest()->paginate(3);
+
+        return view('dashboard.products.index', compact('products'));
     }
 
     public function create()
