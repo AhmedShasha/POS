@@ -49,6 +49,7 @@ return [
     'purchase_price'=>'Purchase Price',
     'sale_price'=>'Sale Price',
     'stock'=>'Stock',
+    'profit_percent'=>'Profit Percent',
 
     'ar' => [
         'name' => 'Name in Arabic',

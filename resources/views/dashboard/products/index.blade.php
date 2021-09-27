@@ -69,6 +69,7 @@
                                     <th>@lang('site.image')</th>
                                     <th>@lang('site.purchase_price')</th>
                                     <th>@lang('site.sale_price')</th>
+                                    <th>@lang('site.profit_percent')</th>
                                     <th>@lang('site.stock')</th>
                                     <th>@lang('site.action')</th>
 
@@ -85,6 +86,7 @@
                                         </td>
                                         <td>{{ $product->purchase_price }}</td>
                                         <td>{{ $product->sale_price }}</td>
+                                        <td>{{ $product->profit_percent }}%</td>
                                         <td>{{ $product->stock }}</td>
 
                                         <td>

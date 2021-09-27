@@ -46,6 +46,8 @@ return [
     'purchase_price'=>'سعر الشراء',
     'sale_price'=>'سعر البيع',
     'stock'=>'المخزن',
+    'profit_percent'=>'نسبة الربح',
+
 
     'ar' => [
         'name' => 'الاسم باللغة العربية',
