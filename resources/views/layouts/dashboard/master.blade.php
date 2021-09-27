@@ -245,6 +245,7 @@
 
 </div>
 
+<script src="{{ url('/') }}/plugins/ckeditor/ckeditor.js"></script>
 <!-- jQuery -->
 <script src="{{ url('/') }}/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -262,6 +263,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url('/') }}/dist/js/demo.js"></script>
 <script src="{{ url('/') }}/js/printThis.js"></script>
+
 @yield('js')
 
 <script>
@@ -278,6 +280,8 @@
             $('.image-preview').attr('src', '');
         }
     });
+
+    CKEDITOR.config.language = "{{ app()->getLocale() }}";
 </script>
 
 </body>

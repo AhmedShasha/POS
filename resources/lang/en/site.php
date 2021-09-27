@@ -2,10 +2,10 @@
 
 return [
     'Home' => 'Home',
-    'Langs' => 'Langs',
+    'Langs' => 'Languages',
     'Dashboard' => 'Dashboard',
-    'logout' =>'Sign Out',
-    'login' =>'Sign In',
+    'logout' => 'Sign Out',
+    'login' => 'Sign In',
 
     'users' => 'Users',
     'user' => 'User',
@@ -39,20 +39,26 @@ return [
     'read' => 'Read',
     'update' => 'Update',
     'delete' => 'Delete',
+    'description' => 'Description',
 
+    'allcategories' => 'All Categories',
     'categories' => 'Categories',
     'category' => 'Category',
     'products' => 'Products',
     'product' => 'Product',
+    'purchase_price'=>'Purchase Price',
+    'sale_price'=>'Sale Price',
+    'stock'=>'Stock',
 
+    'ar' => [
+        'name' => 'Name in Arabic',
+        'description' => 'Description in Arabic',
 
-    'ar' =>[
-        'name'=>'Name in Arabic'
     ],
 
-    'en' =>[
-        'name'=>'Name in English'
+    'en' => [
+        'name' => 'Name in English',
+        'description' => 'Description in English',
     ],
-
 
 ];

@@ -32,7 +32,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title m-1">@lang('site.products') <small
-                                class="ml-2">{{ $products->total() }}</small></h3>
+                                class="ml-2">{{ $products->count() }}</small></h3>
 
                         <!-- Form search  -->
                         <form action="{{ route('dashboard.products.index') }}" method="GET">
@@ -46,8 +46,7 @@
                                         <i class="fa fa-search mr-1"></i>@lang('site.search')</button>
 
                                     @if (auth()->user()->hasPermission('products_create'))
-                                        <a href="{{ route('dashboard.products.create') }}"
-                                            class="btn btn-sm btn-success">
+                                        <a href="{{ route('dashboard.products.create') }}" class="btn btn-sm btn-success">
                                             <i class="fa fa-plus mr-1"></i>@lang('site.add')</a>
                                     @else
                                         <button class="btn btn-sm btn-success disabled">
@@ -80,8 +79,9 @@
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
                                         <td>{{ $product->name }}</td>
-                                        <td>{{ $product->description }}</td>
-                                        <td><img src="" alt=""></td>
+                                        <td>{!! $product->description !!}</td>
+                                        <td style="width: 75px;"><img src="{{ $product->image_path }}" style="width: 50px"
+                                                class="img-square" alt=""></td>
                                         <td>{{ $product->purchase_price }}</td>
                                         <td>{{ $product->sale_price }}</td>
                                         <td>{{ $product->stock }}</td>
@@ -116,7 +116,7 @@
                             </tbody>
                         </table>
                         <div style="width: fit-content;margin: auto;margin-top: 15px;">
-                            {{ $products->appends(request()->query())->links() }}
+                            {{-- {{ $products->appends(request()->query())->links() }} --}}
                         </div>
                     </div>
                     <!-- /.card-body -->

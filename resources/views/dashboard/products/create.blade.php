@@ -2,7 +2,8 @@
 
 @section('content')
     <!-- Content Wrapper. Contains page content -->
-
+    <!-- summernote -->
+    {{-- <link rel="stylesheet" href="{{ url('/') }}plugins/summernote/summernote-bs4.min.css"> --}}
     <!-- Content Header (Page header) -->
     <div class="content-wrapper">
         <div class="content-header">
@@ -33,27 +34,87 @@
 
                 @include('partials._errors')
 
-                <form action="{{ route('dashboard.products.store') }}" method="POST">
+                <form action="{{ route('dashboard.products.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     {{ csrf_field() }}
                     {{ method_field('post') }}
 
+                    <div class="col">
+                        <div class="row">
+                            @foreach (config('translatable.locales') as $locale)
+                                <!--    Name   -->
+                                <div class="form-group col-md-6">
+                                    <label>@lang('site.'. $locale .'.name')</label>
+                                    <input type="text" name="{{ $locale }}[name]" class="form-control"
+                                        value="{{ old($locale . '.name') }}" placeholder="@lang('site.name')">
+                                </div>
+                            @endforeach
 
-                    @foreach (config('translatable.locales') as $locale)
-                        <!--    Name   -->
-                        <div class="form-group">
-                            <label>@lang('site.'. $locale .'.name')</label>
-                            <input type="text" name="{{ $locale }}[name]" class="form-control"
-                                value="{{ old($locale . '.name') }}" placeholder="@lang('site.name')">
+                            @foreach (config('translatable.locales') as $locale)
+
+                                <div class="form-group col-md-6">
+                                    <label>@lang('site.'. $locale .'.description')</label>
+                                    <textarea name="{{ $locale }}[description]" class="form-control ckeditor"
+                                        value="{{ old($locale . '.description') }}"
+                                        placeholder="@lang('site.description')">
+                                            </textarea>
+                                </div>
+                            @endforeach
                         </div>
-                    @endforeach
+
+                        <div class="row">
+                            <!--    categories      -->
+                            <div class="form-group col-md-3">
+                                <label>@lang('site.category')</label>
+                                <select name="category_id" class="form-control">
+                                    <option value="">@lang('site.allcategories')</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}" {{old('category_id') == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <!--    Price      -->
+                            <div class="form-group col-md-3">
+                                <label>@lang('site.purchase_price')</label>
+                                <input type="number" name="purchase_price" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label>@lang('site.sale_price')</label>
+                                <input type="number" name="sale_price" class="form-control">
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label>@lang('site.stock')</label>
+                                <input type="number" name="stock" class="form-control">
+                            </div>
+                        </div>
+
+                        <!--    Image      -->
+
+                        <div class="form-group">
+                            <label>@lang('site.image')</label>
+                            <input type="file" name="image" class="form-control image btn btn-small">
+                        </div>
+
+                        <div class="form-group">
+                            <img style="width: 100px" class="img-thumbnail image-preview"
+                                src="{{ asset('uploads/products_images/Productdefault.png') }}">
+                        </div>
+
+
+
+                    </div>
 
                     <!--   Button Add     -->
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary "><i
                                 class="fa fa-plus mr-1"></i>@lang('site.add')</button>
                         <a class="btn btn-danger" href="{{ route('dashboard.products.index') }}"><i
-                                class="fa fa-category-edit mr-1"></i>@lang('site.cancel')</a>
+                                class="fa fa-category-edit mr-1">
+                            </i>
+                            @lang('site.cancel')</a>
                     </div>
 
                 </form>
@@ -63,3 +124,17 @@
     </div>
 
 @endsection
+{{-- <script>
+    $(function() {
+        // Summernote
+        $('#summernote').summernote()
+
+        // CodeMirror
+        CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+            mode: "htmlmixed",
+            theme: "monokai"
+        });
+    })
+</script> --}}
+<!-- Summernote -->
+{{-- <script src="{{ url('/') }}plugins/summernote/summernote-bs4.min.js"></script> --}}

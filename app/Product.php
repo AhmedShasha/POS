@@ -9,15 +9,20 @@ class Product extends Model
 {
     use Translatable;
     //
-    public $translatedAttributes = ['name'];
-
-    protected $fillable = [
-        'name', 'description',
-    ];
+    public $translatedAttributes = ['name', 'description'];
 
     protected $guarded = [];
 
-    public function category(){
+    protected $appends = ['image_path'];
+
+    public function getImagePathAttribute()
+    {
+
+        return asset('uploads/products_images/' . $this->image);
+
+    }
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 }

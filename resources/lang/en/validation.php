@@ -146,12 +146,27 @@ return [
     |
      */
 
-    'attributes' => ['ar' => [
-        'name' => 'Name in Arabic',
-    ],
+    'attributes' => [
+
+        'purchase_price' => 'Purchase Price',
+        'sale_price' => 'Sale Price',
+        'category_id' =>'Category',
+        'image' =>'Image',
+
+
+        'stock' => 'Stock',
+
+        'ar' => [
+            'name' => 'Name in Arabic',
+            'description' => 'Description in Arabic',
+
+        ],
 
         'en' => [
             'name' => 'Name in English',
-        ]],
+            'description' => 'Description in English',
+
+        ],
+    ],
 
 ];
