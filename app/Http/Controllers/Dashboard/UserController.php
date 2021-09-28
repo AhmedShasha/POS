@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
 use App\User;
+use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as File;
 use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Intervention\Image\Facades\Image;
 
@@ -21,6 +20,8 @@ class UserController extends Controller
         $this->middleware(['permission:users_read'])->only('index');
         $this->middleware(['permission:users_update'])->only('edit');
         $this->middleware(['permission:users_delete'])->only('destroy');
+
+        
 
     }
 
@@ -141,8 +142,7 @@ class UserController extends Controller
         //
         $user = User::find($id);
 
-        if ($user->image != 'default.png') {
-            // Storage::disk('public_uploads')->delete('/user_images/' . $user->image);
+        if ($user->image !== 'default.png') {
             File::delete('uploads/users_images/' . $user->image);
         }
 

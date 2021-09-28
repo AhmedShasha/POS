@@ -103,7 +103,7 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id);
-        if ($product->image != 'default.png') {
+        if ($product->image !== 'default.png') {
             File::delete('uploads/users_images/' . $product->image);
         }
         $product->delete();

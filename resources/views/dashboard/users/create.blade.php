@@ -127,7 +127,7 @@
 
                                 <div class="form-group ">
                                     <img style="width: 75px" class="img-thumbnail image-preview"
-                                        src="{{ asset('uploads/users_images/Userdefault.png') }}">
+                                        src="{{ asset('uploads/users_images/default.png') }}">
                                 </div>
                             </div>
                         </div>

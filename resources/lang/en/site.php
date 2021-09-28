@@ -50,6 +50,9 @@ return [
     'sale_price'=>'Sale Price',
     'stock'=>'Stock',
     'profit_percent'=>'Profit Percent',
+    'more_info' => 'More Info',
+    'user_registrations'=>'User Registrations',
+
 
     'ar' => [
         'name' => 'Name in Arabic',

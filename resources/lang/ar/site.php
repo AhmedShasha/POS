@@ -47,6 +47,9 @@ return [
     'sale_price'=>'سعر البيع',
     'stock'=>'المخزن',
     'profit_percent'=>'نسبة الربح',
+    'more_info' => 'المزيد',
+    'user_registrations'=>'المستخدمين المسجلين',
+
 
 
     'ar' => [

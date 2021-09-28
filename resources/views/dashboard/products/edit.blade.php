@@ -69,7 +69,7 @@
                                 <label>@lang('site.category')</label>
                                 <select name="category_id" class="form-control">
                                     <option value="">@lang('site.allcategories')</option>
-                                    @foreach ($categories as $category)
+                                    @foreach ($ShareData['category'] as $category)
                                         <option value="{{ $category->id }}" {{old('category_id') == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
                                     @endforeach
                                 </select>

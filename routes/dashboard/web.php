@@ -12,9 +12,7 @@ Route::group(
         ->middleware(['auth'])
         ->group(function () {
 
-            Route::get('/index', function () {
-                return view('dashboard.index');
-            })->name('index');
+            Route::get('/index', 'DashboardController@index')->name('index');
 
             Route::resource('categories', CategoryController::class)->except(['show']);
             Route::resource('products', ProductController::class)->except(['show']);
