@@ -28,7 +28,7 @@ class Product extends Model
 
         $profit_percent = $profit * 100  / $this->purchase_price;
 
-        return number_format($profit_percent);
+        return number_format($profit_percent , 2);
     }
     public function category()
     {
