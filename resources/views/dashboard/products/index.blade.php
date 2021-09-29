@@ -41,6 +41,16 @@
                                     <input type="text" name="search" class="form-control"
                                         placeholder="@lang('site.search')" value="{{ request()->search }}">
                                 </div>
+                                <div class="col-md-3">
+                                    <select name="category_id" class="form-control">
+                                        <option value="">@lang('site.allcategories')</option>
+                                        @foreach ($ShareData['category'] as $category)
+                                            <option value="{{ $category->id }}"
+                                                {{ request()->category_id == $category->id ? 'selected' : '' }}>
+                                                {{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="col-md-4 m-1">
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         <i class="fa fa-search mr-1"></i>@lang('site.search')</button>
@@ -57,6 +67,7 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -67,9 +78,10 @@
                                     <th>@lang('site.name')</th>
                                     <th>@lang('site.description')</th>
                                     <th>@lang('site.image')</th>
+                                    <th>@lang('site.category')</th>
                                     <th>@lang('site.purchase_price')</th>
                                     <th>@lang('site.sale_price')</th>
-                                    <th>@lang('site.profit_percent')</th>
+                                    <th>@lang('site.profit_percent') %</th>
                                     <th>@lang('site.stock')</th>
                                     <th>@lang('site.action')</th>
 
@@ -84,9 +96,10 @@
                                         <td style="width: 75px;"><img src="{{ $product->image_path }}"
                                                 class="img-thumbnail img-square" style="width: 50px">
                                         </td>
+                                        <td>{{ $product->category->name }}</td>
                                         <td>{{ $product->purchase_price }}</td>
                                         <td>{{ $product->sale_price }}</td>
-                                        <td>{{ $product->profit_percent }}%</td>
+                                        <td>{{ $product->profit_percent }} %</td>
                                         <td>{{ $product->stock }}</td>
 
                                         <td>

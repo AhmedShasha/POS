@@ -75,17 +75,6 @@
                             @endforeach
                         </div>
                     </li>
-
-                    <!-- User Card -->
-                    <li class="dropdown nav-item user-header">
-                        <div class="avatar" style="cursor: pointer;">
-                            <div class="nav-link" href="#">
-                                <img alt="User Image" src="{{ asset('dist/img/user2-160x160.jpg') }}"
-                                    decoding="async" class="rounded-circle" style="max-height:120%">
-                                {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </nav>
             <!-- /.navbar -->
@@ -137,15 +126,7 @@
                             @endforeach
                         </div>
                     </li>
-                    <li class="dropdown nav-item">
-                        <div class="avatar" style="cursor: pointer;">
-                            <div class="nav-link" href="#">
-                                <img alt="User Image" src="{{ asset('dist/img/user2-160x160.jpg') }}"
-                                    decoding="async" class="rounded-circle" style="max-height:120%">
-                                {{ auth()->user()->first_name }} {{ auth()->user()->last_name }}
-                            </div>
-                        </div>
-                    </li>
+
                 </ul>
             </nav>
             <!-- /.navbar -->
@@ -159,9 +140,20 @@
     <a href="{{ route('dashboard.index') }}" class="brand-link">
         <img src="{{ url('/') }}/dist/img/POSLogo.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">POS System</span>
+        <span class="brand-text font-weight-light">@lang('site.pos_system')</span>
     </a>
 
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 ml-2 pb-3 mb-3 d-flex " >
+        <div class="image ">
+            <img src="{{ auth()->user()->image_path }}" decoding="async" class="rounded-circle"
+                style="max-height:120%">
+        </div>
+        <div class="info">
+            <span class="d-block" style="color: white">{{ auth()->user()->first_name }}
+                {{ auth()->user()->last_name }}</span>
+        </div>
+    </div>
     <!-- Sidebar -->
     <div
         class="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition">
@@ -189,7 +181,7 @@
                 @if (auth()->user()->hasPermission('products_read'))
                     <li class="nav-item">
                         <a href="{{ route('dashboard.products.index') }}" class="nav-link">
-                            <i class="nav-icon fab fa-product-hunt"></i>
+                            <i class="nav-icon fa fa-shopping-bag"></i>
                             <span>@lang('site.products')</span>
                         </a>
                     </li>

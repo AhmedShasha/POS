@@ -26,10 +26,10 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>{{$data['user_count']}}</h3>
-                        <p>@lang('site.user_registrations')</p>
+                        <p>@lang('site.allusers')</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-person-add"></i>
+                        <i class="fas fa-user-plus"></i>
                     </div>
                     <a href="{{route('dashboard.users.index')}}" class="small-box-footer">@lang('site.more_info') <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
@@ -40,10 +40,10 @@
                 <div class="small-box bg-info">
                     <div class="inner">
                         <h3>{{$data['cat_count']}}</h3>
-                        <p>@lang('site.categories')</p>
+                        <p>@lang('site.allcategories')</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-bag"></i>
+                        <i class="nav-icon fas fa-layer-group"></i>
                     </div>
                     <a href="{{route('dashboard.categories.index')}}" class="small-box-footer">@lang('site.more_info') <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
@@ -55,16 +55,15 @@
                     <div class="inner">
                         <h3>{{$data['product_count']}}</h3>
 
-                        <p>@lang('site.product')</p>
+                        <p>@lang('site.allproducts')</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
-                    </div>
+                        <i class="fas fa-shopping-bag"></i>                    </div>
                     <a href="{{route('dashboard.products.index')}}" class="small-box-footer">@lang('site.more_info') <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-6">
+            {{-- <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
@@ -72,14 +71,16 @@
                         <p>Unique Visitors</p>
                     </div>
                     <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
+
                     </div>
                     <a href="#" class="small-box-footer"><i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-            </div>
+            </div> --}}
+
             <!-- ./col -->
         </div>
         <!-- /.row -->
     </div>
 
 @endsection
+

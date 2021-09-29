@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'pos_system'=>'نظام كاشير',
+
     'Home' => 'الرئيسية',
     'Langs' => 'اللغة',
     'Dashboard' => 'التحكم',
@@ -38,17 +40,20 @@ return [
     'update' => 'تعديل',
     'delete' => 'حذف',
 
-    'allcategories' => 'كل الاقسام',
+    'allcategories' => 'جميع الاقسام',
     'categories' => 'الاقسام',
     'category' => 'القسم',
     'products' => 'المنتجات',
+    'products_count' => 'عدد المنتجات',
+    'allproducts'=>'جميع المنتجات',
+    'related_products' => 'المنتجات المرتبطة',
     'product' => 'المنتج',
     'purchase_price'=>'سعر الشراء',
     'sale_price'=>'سعر البيع',
     'stock'=>'المخزن',
     'profit_percent'=>'نسبة الربح',
     'more_info' => 'المزيد',
-    'user_registrations'=>'المستخدمين المسجلين',
+    'allusers'=>'جميع المستخدمين',
 
 
 

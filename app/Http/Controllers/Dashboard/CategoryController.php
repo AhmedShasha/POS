@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
             return $q->when($request->search, function ($q) use ($request) {
 
-                return $q->where('name', 'like', '%' . $request->search . '%');
+                return $q->whereTranslationLike('name', '%' . $request->search . '%');
 
             });
         })->latest()->paginate(3);
@@ -74,10 +74,6 @@ class CategoryController extends Controller
 
         $request->validate($rules);
 
-        // $request->validate([
-        //     'ar.name' => 'required|unique:category_translations,name',
-        //     'en.name' => 'required|unique:category_translations,name',
-        // ]);
         $category->update($request->all());
         toast()->success(Lang::get('site.updated_successfully'));
         return redirect()->route('dashboard.categories.index');

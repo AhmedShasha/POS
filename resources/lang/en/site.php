@@ -1,6 +1,8 @@
 <?php
 
 return [
+
+    'pos_system'=>'POS System',
     'Home' => 'Home',
     'Langs' => 'Languages',
     'Dashboard' => 'Dashboard',
@@ -44,14 +46,18 @@ return [
     'allcategories' => 'All Categories',
     'categories' => 'Categories',
     'category' => 'Category',
+    'allproducts'=>'All Products',
     'products' => 'Products',
+    'products_count' => 'Products Count',
+    'related_products' => 'Related Products',
+
     'product' => 'Product',
     'purchase_price'=>'Purchase Price',
     'sale_price'=>'Sale Price',
     'stock'=>'Stock',
     'profit_percent'=>'Profit Percent',
     'more_info' => 'More Info',
-    'user_registrations'=>'User Registrations',
+    'allusers'=>'All Users',
 
 
     'ar' => [
