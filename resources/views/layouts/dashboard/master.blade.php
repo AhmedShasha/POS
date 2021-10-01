@@ -94,7 +94,7 @@
                 </ul>
 
                 <!-- SEARCH FORM -->
-                <form class="form-inline ml-3">
+                {{-- <form class="form-inline ml-3">
                     <div class="input-group input-group-sm">
                         <input class="form-control form-control-navbar" type="search" placeholder="Search"
                             aria-label="Search">
@@ -104,7 +104,7 @@
                             </button>
                         </div>
                     </div>
-                </form>
+                </form> --}}
 
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
@@ -144,7 +144,7 @@
     </a>
 
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 ml-2 pb-3 mb-3 d-flex " >
+    <div class="user-panel mt-3 ml-2 pb-3 mb-3 d-flex ">
         <div class="image ">
             <img src="{{ auth()->user()->image_path }}" decoding="async" class="rounded-circle"
                 style="max-height:120%">
@@ -187,6 +187,15 @@
                     </li>
                 @endif
 
+                @if (auth()->user()->hasPermission('clients_read'))
+                    <li class="nav-item">
+                        <a href="{{ route('dashboard.clients.index') }}" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <span>@lang('site.clients')</span>
+                        </a>
+                    </li>
+                @endif
+
                 @if (auth()->user()->hasPermission('users_read'))
                     <li class="nav-item">
                         <a href="{{ route('dashboard.users.index') }}" class="nav-link">
@@ -196,6 +205,8 @@
                     </li>
                 @endif
 
+                {{-- SignOut --}}
+                
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

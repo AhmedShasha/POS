@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Category;
+use App\Client;
 use App\Product;
 use App\User;
 use Illuminate\Support\Facades\Schema;
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
          //its just a dummy data object.
 
          $dataShare['user'] = User::get();
+         $dataShare['client'] = Client::get();
          $dataShare['product'] = Product::with('translations')->get();
          $dataShare['category'] = Category::with('translations')->get();
 

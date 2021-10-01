@@ -9,9 +9,6 @@ return [
     'logout' => 'Sign Out',
     'login' => 'Sign In',
 
-    'users' => 'Users',
-    'user' => 'User',
-
     'first_name' => 'First Name',
     'last_name' => 'Last Name',
     'action' => 'Action',
@@ -42,22 +39,33 @@ return [
     'update' => 'Update',
     'delete' => 'Delete',
     'description' => 'Description',
+    'more_info' => 'More Info',
 
     'allcategories' => 'All Categories',
     'categories' => 'Categories',
     'category' => 'Category',
+
     'allproducts'=>'All Products',
     'products' => 'Products',
     'products_count' => 'Products Count',
     'related_products' => 'Related Products',
-
     'product' => 'Product',
     'purchase_price'=>'Purchase Price',
     'sale_price'=>'Sale Price',
     'stock'=>'Stock',
     'profit_percent'=>'Profit Percent',
-    'more_info' => 'More Info',
+
     'allusers'=>'All Users',
+    'users' => 'Users',
+    'user' => 'User',
+
+    'client' => 'Client',
+    'clients' => 'Clients',
+    'clients_count' => 'Clients Count',
+    'allclients'=>'All Clients',
+    'phone'=>'Phone',
+    'address'=>'Address',
+    'phoneNum' => '+20-100-00-000',
 
 
     'ar' => [

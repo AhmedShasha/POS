@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Category;
+use App\Client;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\User;
@@ -15,6 +16,7 @@ class DashboardController extends Controller
 
         $data['cat_count'] = Category::count();
         $data['product_count'] = Product::count();
+        $data['client_count'] = Client::count();
         $data['user_count'] = User::whereRoleIs('admin')->count();
 
         return view('dashboard.index',compact('data'));

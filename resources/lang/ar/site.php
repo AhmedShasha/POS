@@ -1,13 +1,11 @@
 <?php
 
 return [
-    'pos_system'=>'نظام كاشير',
+    'pos_system' => 'نظام كاشير',
 
     'Home' => 'الرئيسية',
     'Langs' => 'اللغة',
     'Dashboard' => 'التحكم',
-    'users' => 'المشرفين',
-    'user' => 'مشرف',
     'logout' => 'تسجيل الخروج',
     'login' => 'تسجيل الدخول',
 
@@ -39,23 +37,33 @@ return [
     'read' => 'عرض',
     'update' => 'تعديل',
     'delete' => 'حذف',
+    'more_info' => 'المزيد',
+
+    'allusers' => 'جميع المستخدمين',
+    'users' => 'المشرفين',
+    'user' => 'مشرف',
 
     'allcategories' => 'جميع الاقسام',
     'categories' => 'الاقسام',
     'category' => 'القسم',
-    'products' => 'المنتجات',
-    'products_count' => 'عدد المنتجات',
-    'allproducts'=>'جميع المنتجات',
+
     'related_products' => 'المنتجات المرتبطة',
     'product' => 'المنتج',
-    'purchase_price'=>'سعر الشراء',
-    'sale_price'=>'سعر البيع',
-    'stock'=>'المخزن',
-    'profit_percent'=>'نسبة الربح',
-    'more_info' => 'المزيد',
-    'allusers'=>'جميع المستخدمين',
+    'products' => 'المنتجات',
+    'products_count' => 'عدد المنتجات',
+    'allproducts' => 'جميع المنتجات',
+    'purchase_price' => 'سعر الشراء',
+    'sale_price' => 'سعر البيع',
+    'stock' => 'المخزن',
+    'profit_percent' => 'نسبة الربح',
 
-
+    'client' => 'العميل',
+    'clients' => 'العملاء',
+    'clients_count' => 'عدد العملاء',
+    'allclients' => 'جميع العملاء',
+    'phone' => 'الموبايل',
+    'address' => 'العنوان',
+    'phoneNum' => '+20-100-00-000',
 
     'ar' => [
         'name' => 'الاسم باللغة العربية',
