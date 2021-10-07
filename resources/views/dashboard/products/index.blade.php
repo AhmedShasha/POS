@@ -13,7 +13,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                    href="{{ route('dashboard.index') }}">@lang('site.Dashboard')</a>
+                                    href="{{ route('dashboard.welcome') }}">@lang('site.Dashboard')</a>
                             </li>
                             <li class="breadcrumb-item active">@lang('site.products')</li>
                         </ol>
@@ -104,11 +104,11 @@
 
                                         <td>
                                             @if (auth()->user()->hasPermission('products_update'))
-                                                <a class="btn btn-info btn-sm"
+                                                <a class="btn btn-info btn-sm mb-1"
                                                     href="{{ route('dashboard.products.edit', $product->id) }}"><i
                                                         class="fa fa-edit mr-1"></i>@lang('site.edit')</a>
                                             @else
-                                                <button class="btn btn-info btn-sm disabled"><i
+                                                <button class="btn btn-info btn-sm disabled mt-1"><i
                                                         class="fa fa-edit mr-1"></i>@lang('site.edit')</button>
                                             @endif
 
@@ -117,12 +117,12 @@
                                                     method="POST" style="display:inline-block;">
                                                     {{ csrf_field() }}
                                                     {{ method_field('delete') }}
-                                                    <button type="submit" class="btn btn-danger btn-sm delete"
+                                                    <button type="submit" class="btn btn-danger btn-sm delete mb-1"
                                                         onclick="return confirm('Are you sure you want to delete this product?!')"><i
                                                             class="fa fa-trash mr-1"></i>@lang('site.delete')</button>
                                                 </form>
                                             @else
-                                                <button class="btn btn-danger btn-sm disabled"><i
+                                                <button class="btn btn-danger btn-sm disabled mt-1"><i
                                                         class="fa fa-trash mr-1"></i> @lang('site.delete')</button>
                                             @endif
 

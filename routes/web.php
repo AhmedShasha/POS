@@ -24,7 +24,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
     Route::post('logout','authController@logout')->name('logout');
 
     Route::get('/',function(){
-        return redirect()->route('dashboard.index');
+        return redirect()->route('dashboard.welcome');
     });
 });
 

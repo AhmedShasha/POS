@@ -2,7 +2,7 @@
 
 return [
 
-    'pos_system'=>'POS System',
+    'pos_system' => 'POS System',
     'Home' => 'Home',
     'Langs' => 'Languages',
     'Dashboard' => 'Dashboard',
@@ -45,28 +45,35 @@ return [
     'categories' => 'Categories',
     'category' => 'Category',
 
-    'allproducts'=>'All Products',
+    'allproducts' => 'All Products',
     'products' => 'Products',
     'products_count' => 'Products Count',
     'related_products' => 'Related Products',
     'product' => 'Product',
-    'purchase_price'=>'Purchase Price',
-    'sale_price'=>'Sale Price',
-    'stock'=>'Stock',
-    'profit_percent'=>'Profit Percent',
+    'purchase_price' => 'Purchase Price',
+    'sale_price' => 'Sale Price',
+    'stock' => 'Stock',
+    'profit_percent' => 'Profit Percent',
 
-    'allusers'=>'All Users',
+    'allusers' => 'All Users',
     'users' => 'Users',
     'user' => 'User',
 
     'client' => 'Client',
     'clients' => 'Clients',
     'clients_count' => 'Clients Count',
-    'allclients'=>'All Clients',
-    'phone'=>'Phone',
-    'address'=>'Address',
+    'allclients' => 'All Clients',
+    'phone' => 'Phone',
+    'address' => 'Address',
     'phoneNum' => '+20-100-00-000',
-
+    'add_order' => 'Add Order',
+    'orders' => 'Orders',
+    'allorders' => 'All Orders',
+    'order' => 'Order',
+    'quantity' => 'Quantity',
+    'price' => 'Price',
+    'total' => 'Total',
+    'no_records'=>'No Records',
 
     'ar' => [
         'name' => 'Name in Arabic',

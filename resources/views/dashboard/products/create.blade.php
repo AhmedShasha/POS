@@ -15,7 +15,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                    href="{{ route('dashboard.index') }}">@lang('site.Dashboard')</a></li>
+                                    href="{{ route('dashboard.welcome') }}">@lang('site.Dashboard')</a></li>
                             <li class="breadcrumb-item"><a
                                     href="{{ route('dashboard.products.index') }}">@lang('site.products')</a></li>
                             <li class="breadcrumb-item">@lang('site.add') @lang('site.product')</li>
@@ -98,7 +98,7 @@
 
                             <div class="form-group col-md-2">
                                 <img style="width: 75px" class="img-thumbnail image-preview"
-                                    src="{{ asset('uploads/products_images/Productdefault.png') }}">
+                                    src="{{ asset('uploads/products_images/default.png') }}">
                             </div>
 
                         </div>

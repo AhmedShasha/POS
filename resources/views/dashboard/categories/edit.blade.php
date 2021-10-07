@@ -14,7 +14,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                    href="{{ route('dashboard.index') }}">@lang('site.Dashboard')</a></li>
+                                    href="{{ route('dashboard.welcome') }}">@lang('site.Dashboard')</a></li>
                             <li class="breadcrumb-item"><a
                                     href="{{ route('dashboard.categories.index') }}">@lang('site.categories')</a></li>
                             <li class="breadcrumb-item">@lang('site.edit') @lang('site.category')</li>

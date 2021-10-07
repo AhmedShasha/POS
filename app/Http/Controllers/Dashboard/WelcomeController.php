@@ -5,21 +5,23 @@ namespace App\Http\Controllers\Dashboard;
 use App\Category;
 use App\Client;
 use App\Http\Controllers\Controller;
+use App\Order;
 use App\Product;
 use App\User;
 
 
-class DashboardController extends Controller
+class WelcomeController extends Controller
 {
-    // index function
-    public function index() {
+    // welcome function
+    public function welcome() {
 
         $data['cat_count'] = Category::count();
         $data['product_count'] = Product::count();
         $data['client_count'] = Client::count();
+        $data['order_count'] = Order::count();
         $data['user_count'] = User::whereRoleIs('admin')->count();
 
-        return view('dashboard.index',compact('data'));
+        return view('dashboard.welcome',compact('data'));
 
-    }// end of index
+    }// end of welcome
 }

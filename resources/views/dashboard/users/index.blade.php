@@ -13,7 +13,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                    href="{{ route('dashboard.index') }}">@lang('site.Dashboard')</a>
+                                    href="{{ route('dashboard.welcome') }}">@lang('site.Dashboard')</a>
                             </li>
                             <li class="breadcrumb-item active">@lang('site.users')</li>
                         </ol>

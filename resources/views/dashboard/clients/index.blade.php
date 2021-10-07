@@ -13,7 +13,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a
-                                    href="{{ route('dashboard.index') }}">@lang('site.Dashboard')</a>
+                                    href="{{ route('dashboard.welcome') }}">@lang('site.Dashboard')</a>
                             </li>
                             <li class="breadcrumb-item active">@lang('site.clients')</li>
                         </ol>
@@ -69,6 +69,7 @@
                                     <th>@lang('site.name')</th>
                                     <th>@lang('site.phone')</th>
                                     <th>@lang('site.address')</th>
+                                    <th>@lang('site.add_order')</th>
                                     <th>@lang('site.action')</th>
 
                                 </tr>
@@ -81,6 +82,18 @@
                                         <td>{{ $client->name }}</td>
                                         <td>{{ implode('-', array_filter($client->phone)) }}</td>
                                         <td>{{ $client->address }}</td>
+                                        <td>
+                                            @if (auth()->user()->hasPermission('orders_create'))
+                                                <a href="{{ route('dashboard.clients.orders.create', $client->id) }}"
+                                                    class="btn btn-success btn-sm">
+                                                    <i class="fa fa-plus mr-1"></i>
+                                                    @lang('site.add_order')
+                                                </a>
+                                            @else
+                                                <button class="btn btn-success btn-sm disabled"><i
+                                                        class="fa fa-edit mr-1"></i>@lang('site.add_order')</button>
+                                            @endif
+                                        </td>
                                         <td>
                                             @if (auth()->user()->hasPermission('clients_update'))
 

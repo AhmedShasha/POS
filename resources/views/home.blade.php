@@ -15,7 +15,7 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <a class="btn btn-primary" href="{{route('dashboard.index')}}">@lang('site.Dashboard')</a>
+                    <a class="btn btn-primary" href="{{route('dashboard.welcome')}}">@lang('site.Dashboard')</a>
                 </div>
             </div>
         </div>

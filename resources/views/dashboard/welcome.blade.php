@@ -21,7 +21,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row m-auto">
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
@@ -36,7 +36,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-md-6 ">
+            <div class="col-lg-4 col-md-6 ">
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
@@ -60,14 +60,14 @@
                         <p>@lang('site.allproducts')</p>
                     </div>
                     <div class="icon">
-                        <i class="fas fa-shopping-bag"></i>
+                        <i class="fas fa-shopping-cart"></i>
                     </div>
                     <a href="{{ route('dashboard.products.index') }}" class="small-box-footer">@lang('site.more_info') <i
                             class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-4 col-6">
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
@@ -76,6 +76,21 @@
                     </div>
                     <div class="icon">
                         <i class="fas fa-users"></i>
+                    </div>
+                    <a href="{{ route('dashboard.clients.index') }}" class="small-box-footer">@lang('site.more_info') <i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-6">
+                <!-- small box -->
+                <div class="small-box bg-gradient-dark">
+                    <div class="inner">
+                        <h3>{{ $data['order_count'] }}</h3>
+                        <p>@lang('site.allorders')</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-shopping-basket" style="color: rgba(255, 255, 255, 0.479)"></i>
                     </div>
                     <a href="{{ route('dashboard.clients.index') }}" class="small-box-footer">@lang('site.more_info') <i
                             class="fas fa-arrow-circle-right"></i></a>

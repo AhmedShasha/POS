@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Dashboard\ClintController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -13,11 +12,20 @@ Route::group(
         ->middleware(['auth'])
         ->group(function () {
 
-            Route::get('/index', 'DashboardController@index')->name('index');
+            // Dashboard Routes
+            Route::get('/', 'WelcomeController@welcome')->name('welcome');
 
-            Route::resource('clients', ClientController::class)->except(['show']);
+            // Category routes
             Route::resource('categories', CategoryController::class)->except(['show']);
+
+            // Products routes
             Route::resource('products', ProductController::class)->except(['show']);
+
+            // Clients routes
+            Route::resource('clients', ClientController::class)->except(['show']);
+            Route::resource('clients.orders', 'Client\OrderController')->except(['show']);
+
+            // User routes
             Route::resource('users', UserController::class)->except(['show']);
 
         });

@@ -51,7 +51,7 @@
                         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="{{ route('dashboard.index') }}" class="nav-link">@lang('site.Home')</a>
+                        <a href="{{ route('dashboard.welcome') }}" class="nav-link">@lang('site.Home')</a>
                     </li>
                 </ul>
 
@@ -89,7 +89,7 @@
                         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="{{ route('dashboard.index') }}" class="nav-link">@lang('site.Home')</a>
+                        <a href="{{ route('dashboard.welcome') }}" class="nav-link">@lang('site.Home')</a>
                     </li>
                 </ul>
 
@@ -137,7 +137,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route('dashboard.index') }}" class="brand-link">
+    <a href="{{ route('dashboard.welcome') }}" class="brand-link">
         <img src="{{ url('/') }}/dist/img/POSLogo.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">@lang('site.pos_system')</span>
@@ -165,7 +165,7 @@
                    with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="{{ route('dashboard.index') }}" class="nav-link">
+                    <a href="{{ route('dashboard.welcome') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <span>@lang('site.Dashboard')</span>
                     </a>
@@ -206,7 +206,7 @@
                 @endif
 
                 {{-- SignOut --}}
-                
+
                 <li class="nav-item">
                     <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
@@ -248,6 +248,13 @@
 
 </div>
 
+
+{{-- Cutom file js --}}
+
+{{-- <script src="{{ asset('dashboard/cutom/img_preview.js') }}"></script> --}}
+
+<script src="{{ asset('dashboard/cutom/order.js') }}"></script>
+
 <script src="{{ url('/') }}/plugins/ckeditor/ckeditor.js"></script>
 <!-- jQuery -->
 <script src="{{ url('/') }}/plugins/jquery/jquery.min.js"></script>
@@ -265,11 +272,26 @@
 <script src="{{ url('/') }}/dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ url('/') }}/dist/js/demo.js"></script>
-<script src="{{ url('/') }}/js/printThis.js"></script>
+{{-- <script src="{{ url('/') }}/js/printThis.js"></script> --}}
 
 @yield('js')
 
 <script>
+    // sidebar
+    //     $(document).ready(function() {
+    //         $('.sidebar-menu').tree();
+    //
+    //
+    //         // icheck
+    //         $('input [type="checkbox"].minimal , input [type="radio"].minimal').icheck({
+    //             checkboxClass: 'icheckbox_minimal-blue',
+    //             radioClass: 'iradio_minimal-blue',
+    //         });
+    //
+    //         // delete
+    //         $(.delete).click(function(e) {
+    //             e.preventDefault();
+    //         });
     $(".image").change(function() {
 
         if (this.files && this.files[0]) {
@@ -285,8 +307,8 @@
     });
 
     CKEDITOR.config.language = "{{ app()->getLocale() }}";
+    // });
 </script>
-
 </body>
 
 </html>

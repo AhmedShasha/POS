@@ -43,7 +43,7 @@ class UserController extends Controller
     public function create()
     {
         $users = User::all();
-        $taps = ['users', 'categories', 'products','clients']; // For DRY (Don't Rebeat Yourself)
+        $taps = ['users', 'categories', 'products','clients','orders']; // For DRY (Don't Rebeat Yourself)
         $cruds = ['create', 'read', 'update', 'delete'];
 
         return view('dashboard.users.create', compact('users', 'taps', 'cruds'));
@@ -90,7 +90,7 @@ class UserController extends Controller
     {
         //
         $users = User::find($id);
-        $taps = ['users', 'categories', 'products','clients']; // For DRY (Don't Rebeat Yourself)
+        $taps = ['users', 'categories', 'products','clients','orders']; // For DRY (Don't Rebeat Yourself)
         $cruds = ['create', 'read', 'update', 'delete'];
 
         return view('dashboard.users.edit', compact('users', 'taps', 'cruds'));
