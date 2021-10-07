@@ -251,19 +251,21 @@
 
 {{-- Cutom file js --}}
 
-{{-- <script src="{{ asset('dashboard/cutom/img_preview.js') }}"></script> --}}
-
-<script src="{{ asset('dashboard/cutom/order.js') }}"></script>
+<script src="{{ asset('dashboard_files/cutom/order.js') }}"></script>
 
 <script src="{{ url('/') }}/plugins/ckeditor/ckeditor.js"></script>
 <!-- jQuery -->
 <script src="{{ url('/') }}/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ url('/') }}/plugins/jquery-ui/jquery-ui.min.js"></script>
+
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
 <script>
     $.widget.bridge('uibutton', $.ui.button)
 </script>
+<script src="{{ asset('js/jquery.number.min.js') }}"></script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ url('/') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->

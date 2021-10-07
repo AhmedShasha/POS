@@ -4,7 +4,7 @@ window.addEventListener("load", function() {
 
         var id = $(this).data("id");
         var name = $(this).data("name");
-        var price = $(this).data("price");
+        var price = $.number($(this).data("price"), 2);
 
         $(this).removeClass("btn-success").addClass("btn-default disabled");
 
@@ -40,12 +40,13 @@ window.addEventListener("load", function() {
 
     // Product quantity
     $("body").on('keyup change', '.product-quantity', function() {
-
-        var quantity = parseInt($(this).val());
+        var quantity = Number($(this).val());
         var quantityPrice = $(this).data('price');
-        $(this).closest('tr').find('.product-price').html(quantity * quantityPrice);
+        $(this).closest('tr').find('.product-price').html($.number(quantity * quantityPrice, 2));
         calculateTotal();
     });
+
+    $('total-price').number(true, 2)
 
 });
 
@@ -53,8 +54,10 @@ function calculateTotal() {
     var price = 0;
 
     $(".order-list .product-price").each(function(index) {
-        price += parseInt($(this).html());
+        price += parseFloat($(this).html().replace(/,/g, ''));
     });
 
-    $(".total-price").html(price);
+    console.log(price);
+    // $(".total-price").html($.number(price, 2));
+    $(".total-price").html('Video num 30');
 };

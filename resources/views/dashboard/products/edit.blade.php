@@ -78,13 +78,13 @@
                             <!--    Price      -->
                             <div class="form-group col-md-2">
                                 <label>@lang('site.purchase_price')</label>
-                                <input type="number" name="purchase_price" class="form-control"
+                                <input type="number" name="purchase_price" class="form-control" step="0.01"
                                     value="{{ $product->purchase_price }}">
                             </div>
 
                             <div class="form-group col-md-2">
                                 <label>@lang('site.sale_price')</label>
-                                <input type="number" name="sale_price" class="form-control"
+                                <input type="number" name="sale_price" class="form-control" step="0.01"
                                     value="{{ $product->sale_price }}">
                             </div>
 

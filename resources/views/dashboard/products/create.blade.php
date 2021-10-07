@@ -77,12 +77,12 @@
                             <!--    Price      -->
                             <div class="form-group col-md-2">
                                 <label>@lang('site.purchase_price')</label>
-                                <input type="number" name="purchase_price" class="form-control" placeholder="@lang('site.purchase_price')">
+                                <input type="number" name="purchase_price" step="0.01" class="form-control" placeholder="@lang('site.purchase_price')">
                             </div>
 
                             <div class="form-group col-md-2">
                                 <label>@lang('site.sale_price')</label>
-                                <input type="number" name="sale_price" class="form-control" placeholder="@lang('site.sale_price')">
+                                <input type="number" name="sale_price" step="0.01" class="form-control" placeholder="@lang('site.sale_price')">
                             </div>
 
                             <div class="form-group col-md-2">

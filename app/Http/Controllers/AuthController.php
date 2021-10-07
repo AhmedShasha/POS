@@ -14,7 +14,7 @@ class authController extends Controller
             'password'=>'required',
         ]);
         if(Auth::attempt($data)){
-            return redirect()->route('dashboard.index');
+            return redirect()->route('dashboard.welcome');
         }else{
             return redirect()->back()->withErrors('Data Not Validated');
         }
